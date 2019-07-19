@@ -46,7 +46,7 @@ class Confirm extends Component {
                         buttonFu: <Button
                             style={{ borderRadius: "20px" }}
                             size="large"
-                            type="danger" block onClick={this.Back}><Link to={`/?lineId=${this.props.person.map(a => a.line).toString()}`} ><Icon type="arrow-left" style={{ fontSize: "18px" }} />กลับหน้าแรก</Link>
+                            type="primary" block onClick={this.Back}><Link to={`/?lineId=${this.props.person.map(a => a.line).toString()}`} ><Icon type="home" style={{ fontSize: "18px" }} />กลับหน้าแรก</Link>
                         </Button>
                     })
                     message.success(mess)
@@ -56,7 +56,7 @@ class Confirm extends Component {
                             userId: this.props.person.map(a => a.line).toString(),
                             hospitalName: "โรงพยาบาลสามร้อยยอด",
                             origin: "กระทรวงสาธารณสุข",
-                            queueNumber: this.props.service.map(a => a.servicePoint).toString() + " คิวที่ " + this.props.service.map(a => a.serviceTime).toString(),
+                            queueNumber: this.props.service.map(a => a.servicePoint).toString() + " คิวที่ " + this.props.service.map(a => a.serviceTime).toString().substring(0, 5),
                             patientName: this.props.person.map(a => a.prefix + " " + a.fname + " " + a.lname).toString(),
                             appointmentDate: this.props.service.map(a => a.serviceDate).toString(),
                             appointmentTime: "เวลานัดหมาย " + this.props.service.map(a => a.serviceTime) + "น. กรุณามาก่อนนัด20นาที",

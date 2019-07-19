@@ -302,7 +302,7 @@ class Appoint extends Component {
                 <Card>
                     <Col lg={{ span: 20, offset: 2 }}>
 
-                        <Card style={{ borderRadius: "20px", borderColor: "#3399ff" }} >
+                        <Card style={{ borderRadius: "10px", borderColor: "#3399ff" }} >
                             <div style={{ textAlign: "center" }}>
                                 <h2>ข้อมูลผู้ใช้</h2></div>
                             <table style={{ width: "100%", fontSize: "18px" }}>
@@ -329,7 +329,7 @@ class Appoint extends Component {
                             </table>
                         </Card>
                         <br />
-                        <Card style={{ borderRadius: "20px", borderColor: "#00b300" }}>
+                        <Card style={{ borderRadius: "10px", borderColor: "#00b300" }}>
                             <div style={{ textAlign: "center" }}>
                                 <h2>เลือกจุดบริการ</h2>
                             </div>
@@ -352,7 +352,7 @@ class Appoint extends Component {
                             </Select>
                         </Card>
                         <br />
-                        <Card style={{ borderRadius: "20px", borderColor: "#00b300" }}>
+                        <Card style={{ borderRadius: "10px", borderColor: "#00b300" }}>
                             <div style={{ textAlign: "center" }}>
                                 <h2>ทันตกรรม</h2>
                                 <h2>เลือกวันที่นัด และ บริการ</h2>
@@ -398,7 +398,7 @@ class Appoint extends Component {
                             footer={null}
                             closable={""}
                         >
-                            <Card style={{ borderRadius: "20px", textAlign: "center", border: " 2px solid green" }}>
+                            <Card style={{ borderRadius: "10px", textAlign: "center", border: " 2px solid green" }}>
                                 <h2>เลือกเวลานัดจุดบริการ</h2>
                                 <h2>{this.state.servicePointDesc}</h2>
                             </Card>
@@ -406,7 +406,7 @@ class Appoint extends Component {
                             {this.state.timeWaiting.map(a => (
                                 <div>
                                     <Row type="flex">
-                                        <Card.Grid style={{ width: "50%", borderRadius: '20px 0px 0px 20px', textAlign: "center", backgroundColor: "#c2c2d6" }}>
+                                        <Card.Grid style={{ width: "50%", borderRadius: '10px 0px 0px 20px', textAlign: "center", backgroundColor: "#c2c2d6" }}>
                                             <h2>เวลานัด</h2>
                                             <h2>{`${a.time_point_name} น.`}</h2>
                                         </Card.Grid>
@@ -432,7 +432,7 @@ class Appoint extends Component {
                             >ปิด</Button>
                         </Modal>
                         <br />
-                        <Card style={{ borderRadius: "20px", borderColor: "#4d79ff" }}>
+                        <Card style={{ borderRadius: "10px", borderColor: "#4d79ff" }}>
                             <h3>วันที่นัด: {this.state.dateAppoint} </h3>
                             <h3>จุดบริการ: {this.state.servicePointDesc} </h3>
                             <h3>บริการ: {this.state.serviceDesc} </h3>

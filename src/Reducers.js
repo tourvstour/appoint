@@ -1,6 +1,7 @@
 const storeNames = {
     person: [],
-    service: []
+    service: [],
+    loginStat: []
 }
 
 const reducer = (state = storeNames, action) => {
@@ -20,6 +21,10 @@ const reducer = (state = storeNames, action) => {
         case "service":
             return Object.assign({}, state, {
                 service: state.service.concat(action.dataService)
+            })
+        case "login":
+            return Object.assign({}, state, {
+                loginStat: state.loginStat.concat(action.logins)
             })
         default:
             return state

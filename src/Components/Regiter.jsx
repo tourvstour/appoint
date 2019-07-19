@@ -110,7 +110,7 @@ class Regiter extends Component {
                 <br />
                 <Card>
                     <Col lg={{ span: 20, offset: 2 }}>
-                        <Card style={{ borderRadius: "20px", borderColor: "#00b300" }}>
+                        <Card style={{ borderRadius: "10px", borderColor: "#00b300" }}>
                             <div style={{ textAlign: "center" }}>
                                 <h2>ค้นหาข้อมูล</h2>
                             </div>

@@ -122,7 +122,7 @@ class Massage extends Component {
     }
 
     expandedRowRender = (e) => {
-        console.log(e)
+        //console.log(e)
         return (<div>
             <Card>
                 <table>
@@ -138,7 +138,7 @@ class Massage extends Component {
     }
 
     selectTime = (e) => {
-        console.log(e)
+        //console.log(e)
         this.setState({
             serviceModal: true,
             selectTime: e
@@ -156,7 +156,6 @@ class Massage extends Component {
                     maxLength: res.length
                 })
             })
-
     }
 
     selectService = (e) => {
@@ -180,19 +179,26 @@ class Massage extends Component {
             serviceNameId: this.state.selectService.map(a => a.serviceId).toString(),
             serviceName: this.state.selectService.map(a => a.serviceDesc).toString(),
             serviceDocId: this.state.selectTime.map(a => a.docId).toString(),
-            serviceMaxLength: this.state.maxLength,
+            serviceMaxLength: this.state.maxLength
         }]
 
-        this.props.dispatch({
-            type: "ClearService"
-        })
-        this.props.dispatch({
-            type: "service",
-            dataService
-        })
-        this.setState({
-            serviceModal: false
-        })
+        dataService.forEach(ser => {
+            if (ser.serviceNameId === "") {
+                message.warning("ระบุบริการ")
+            } else {
+                this.props.dispatch({
+                    type: "ClearService"
+                })
+                this.props.dispatch({
+                    type: "service",
+                    dataService
+                })
+                this.setState({
+                    serviceModal: false
+                })
+            }
+        });
+
     }
 
     ButtonCheck = () => {
@@ -229,7 +235,7 @@ class Massage extends Component {
             </Steps>
             <Card>
                 <Col lg={{ span: 20, offset: 2 }}>
-                    <Card style={{ borderRadius: "20px", borderColor: "#3399ff" }} >
+                    <Card style={{ borderRadius: "10px", borderColor: "#3399ff" }} >
                         <div style={{ textAlign: "center" }}>
                             <h2>ข้อมูลผู้ใช้</h2></div>
                         <table style={{ width: "100%", fontSize: "18px" }}>
@@ -254,10 +260,10 @@ class Massage extends Component {
                         </table>
                     </Card>
                     <br />
-                    <Card style={{ borderRadius: "20px", textAlign: "center", borderColor: "green" }}>
+                    <Card style={{ borderRadius: "10px", textAlign: "center", borderColor: "green" }}>
                         <div style={{ textAlign: "center" }}>
                             <h2>
-                                  แผนไทย
+                                แผนไทย
                             </h2>
                             <h2>เลือกวันที่นัด และ บริการ</h2>
                         </div>
@@ -270,12 +276,12 @@ class Massage extends Component {
                         />
                     </Card>
                     <br />
-                    <Card style={{ borderRadius: "20px", textAlign: "center", borderColor: "green" }}>
+                    <Card style={{ borderRadius: "10px", textAlign: "center", borderColor: "green" }}>
                         <Table columns={this.state.column} dataSource={this.state.docService} expandedRowRender={this.expandedRowRender} pagination={false} />
                         <br />
                     </Card>
                     <br />
-                    <Card tyle={{ borderRadius: "20px", borderColor: "#4d79ff" }}>
+                    <Card tyle={{ borderRadius: "10px", borderColor: "#4d79ff" }}>
                         <h3>วันที่นัด: {this.state.dateAppoint} </h3>
                         <h3>จุดบริการ: {this.props.service.map(a => a.servicePoint)} </h3>
                         <h3>บริการ: {this.state.selectService.map(a => a.serviceDesc)}</h3>
@@ -287,7 +293,7 @@ class Massage extends Component {
                 </Col>
                 <br />
                 <Button
-                    style={{ borderRadius: "20px" }}
+                    style={{ borderRadius: "10px" }}
                     size="large"
                     type="" block ><Link to={`/?lineId=${this.props.person.map(a => a.line).toString()}`} ><Icon type="home" style={{ fontSize: "18px" }} /> กลับหน้าแรก</Link>
                 </Button>
